@@ -7,13 +7,9 @@ import com.threepatterns.domain.forms.DomesticIncidentForm;
 import com.threepatterns.domain.forms.ForeignIncidentForm;
 import com.threepatterns.domain.forms.IncidentInfoForm;
 
-public class SubmitFormOperation implements FormOperation {
-    private Wizard wizard;
-    private WizardHistory wizardHistory;
-
+public class SubmitFormOperation extends FormOperation {
     public SubmitFormOperation(Wizard wizard, WizardHistory wizardHistory) {
-        this.wizard = wizard;
-        this.wizardHistory = wizardHistory;
+        super(wizard, wizardHistory);
     }
 
     public void doOperation(ForeignIncidentForm foreignIncidentForm) {

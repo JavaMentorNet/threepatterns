@@ -1,11 +1,17 @@
 package com.threepatterns.domain.operations;
 
+import com.threepatterns.domain.Wizard;
+import com.threepatterns.domain.WizardHistory;
 import com.threepatterns.domain.forms.CreditCardInfoForm;
 import com.threepatterns.domain.forms.DomesticIncidentForm;
 import com.threepatterns.domain.forms.ForeignIncidentForm;
 import com.threepatterns.domain.forms.IncidentInfoForm;
 
-public class ArchiveFormOperation implements FormOperation {
+public class ArchiveFormOperation extends FormOperation {
+    public ArchiveFormOperation(Wizard wizard, WizardHistory wizardHistory) {
+        super(wizard, wizardHistory);
+    }
+
     public void doOperation(ForeignIncidentForm foreignIncidentForm) {
         //there is no state machine in archive operation and also there is no revert operation for archive thus we
         //don't have a wizard and memento here. Only simple archive operation which is not that relevant to state and
